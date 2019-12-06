@@ -1,0 +1,24 @@
+{% include 'head.html' %}
+<br/><br/>
+{% include 'menu.html' %}
+<br/><br/>
+<table align="center" border="2">
+    <tr><th>Mrt_Id</th>
+    <th>Mrt_Name</th>
+    <th>Mrt_Email</th>
+    <th>Mrt_Contact</th>
+    <th>Delete_Mrt</th></tr>
+    {% for x in data %}
+    <tr><th>{{ x.mrt_id }}</th>
+    <th>{{ x.mrt_name }}</th>
+    <th>{{ x.Email_id }}</th>
+    <th>{{ x.contactNo }}</th>
+    <th><a href="{% url 'del' %}?idno={{ x.mrt_id }}">DELETE</a> </th></tr>
+    {% endfor %}
+</table>
+
+
+
+{% if message %}
+    {{ message }}
+{% endif %}

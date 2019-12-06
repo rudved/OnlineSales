@@ -1,0 +1,44 @@
+<!-- Example single danger button -->
+<table align="center"><tr><th><div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    PRODUCT
+  </button>
+  <div class="dropdown-menu">{%  for x in data %}
+    <a class="dropdown-item" href="{% url 'add_product' %}?mid={{ x.pk }}">ADD PRODUCT</a>
+                             {% endfor %}
+                             {% for x in data %}
+    <a class="dropdown-item" href="{% url 'view_product' %}?mid={{ x.pk }}">VIEW PRODUCT</a>
+                             {% endfor %}
+    <a class="dropdown-item" href="">DELETE PRODUCT</a>
+  </div>
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    SALES
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    customers
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    COMPLAINT
+  </button>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+    <button type="submit" class="btn btn-danger dropdown-toggle"  aria-haspopup="true" aria-expanded="false">
+    LOGOUT
+  </button>
+        </form>
+</div></th></tr></table>

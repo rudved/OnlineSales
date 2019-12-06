@@ -1,0 +1,22 @@
+{% include 'head.html' %}
+<br/><br/>
+{% include 'menu.html' %}
+<br/><br/>
+<table align="center" border="2">
+    <tr><th>Product_no</th>
+    <th>Product_name</th>
+    <th>Product_price</th>
+    <th>Product_quantity</th>
+    <th>Product_update</th>
+    <th>Product_delete</th>
+    </tr>
+    {% for x in data1 %}
+     <tr><th>{{ x.pk }}</th>
+    <th>{{ x.fields.p_name }}</th>
+    <th>{{ x.fields.p_price }}</th>
+    <th>{{ x.fields.p_quantity }}</th>
+    <th><a href="{% url 'update' %}?p_no={{ x.pk }}">Product_update</a></th>
+    <th><a href="{% url 'delete' %}?p_no={{ x.pk }}">Product_delete</a></th>
+    </tr>
+    {% endfor %}
+</table>

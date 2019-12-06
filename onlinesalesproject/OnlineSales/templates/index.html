@@ -1,0 +1,11 @@
+{% include 'head.html' %}
+<br/><br/>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+
+<table align="center" border="0">
+    <tr><td><input type="text" placeholder="uname" name="uname"></td></tr>
+    <tr><td><input type="password" placeholder="password" name="pwd"></td></tr>
+    <tr><td><button type="submit">Login</button> </td></tr>
+</table>
+    </form>

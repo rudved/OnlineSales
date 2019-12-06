@@ -1,0 +1,12 @@
+{% include 'head.html' %}
+<br/><br/>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr><th>PRODUCT_NO:{{ data.p_no }}</th></tr>
+            <tr><th>PRODUCT NAME:{{ data.p_name }}</th></tr>
+            <tr><th>PRODUCT PRICE:{{ data.p_price }}</th></tr>
+            <tr><th>PRODUCT QUANTITY:{{ data.p_quantity }}</th></tr>
+            <tr align="center"><th><button type="submit">BUY NOW</button></th></tr>
+        </table>
+    </form>

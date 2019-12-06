@@ -1,0 +1,12 @@
+{% include 'head.html' %}
+<br/><br/>
+<table align="center">
+    <tr><th width="100"><a href="{% url 'loginc' %}">LOGIN</a></th>
+        <th width="100"><a href="{% url 'registerc' %}">REGISTER</a></th></tr>
+</table>
+<br/><br/>
+{% for x in data %}
+<table align="center">
+    <tr><th><a href="{% url 'p_details' %}?p_no={{ x.p_no }}">{{ x.p_name }}</a></th></tr>
+</table>
+{% endfor %}

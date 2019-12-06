@@ -1,0 +1,19 @@
+{% include 'head.html' %}
+<br/><br/>
+{% include 'menu.html' %}
+<br/><br/>
+{% for x in data %}
+<h2 align="center" style="font-weight: bold;color: dodgerblue">Welcome {{ x.fields.mrt_name }} </h2>
+    <table style="width: 100%;color: lightcoral;background: wheat">
+    <tr>
+        <th>Merchant_Id:{{ x.pk }}</th>
+        <th>Merchant_Email_id:{{ x.fields.Email_id}}</th>
+        <th>Merchant_Contact:{{ x.fields.contactNo }}</th>
+        <th><a href="{% url 'change_pwd' %}">Change Password</a></th>
+        <input type="hidden" name="id" value="{{ x.pk }}">
+
+    </tr>
+    </table>
+{% endfor %}
+
+<h1 style="text-align: center">{{ msg }}</h1>

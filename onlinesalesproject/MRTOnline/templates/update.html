@@ -1,0 +1,18 @@
+{% include 'head.html' %}
+<br/><br/>
+{% include 'menu.html' %}
+<br/><br/>
+{% if data2 %}
+    <form action='{% url 'update_p' %}' method="post">
+    {% csrf_token %}
+        {% for x in data2 %}
+    <table align="center">
+        <tr><th>Product_Id<input type="number" name="p_no" required value="{{ x.pk }}" readonly></th></tr>
+        <tr><th>Product_Name<input type="text" name="p_name" required></th></tr>
+        <tr><th>Product_Price<input type="decimal" name="p_price" required></th></tr>
+        <tr><th>Product_Quantity<input type="number" name="p_qty" required></th></tr>
+        <tr><th><button type="submit">SAVE</button> </th></tr>
+    </table>
+    {% endfor %}
+</form>
+{% endif %}
